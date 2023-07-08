@@ -1,25 +1,8 @@
-<!-- <script>
-
-
-  let isOpen = false;
-
-
-
-
-
-
-
- 
-
-  function expandContent() {
-    isExpanded = true;
-  }
-
-  onMount(() => {
-    isOpen = false;
-  });
-
-
+<script>
+  export let selectedCard;
+  export let expandContent;
+  export let nestedData;
+  export let isExpanded;
 </script>
 
 <div class="carcard m-10">
@@ -40,8 +23,8 @@
       </div>
 
       <div class="m-5 grid grid-cols-4 gap-4">
-         <div class="grid grid-cols-4 gap-4"> -->
-<!-- 
+        <!-- <div class="grid grid-cols-4 gap-4"> -->
+
         {#if isExpanded}
           {#each nestedData as item}
             <div
@@ -66,5 +49,5 @@
 <style>
   .carcard {
     width: 100%;
-  } -->
-<!-- </style> -->
+  }
+</style>

@@ -4,6 +4,8 @@
   import { data1 } from "../js/data";
   import { data2 } from "../js/data";
   import Modal from "./Modal.svelte";
+  import SelectedCard from "./SelectedCard.svelte";
+  import Addbutton from "./Addbutton.svelte";
   // import Addcard from "./Addcard.svelte";
   // import InputCard from "./InputCard.svelte";
 
@@ -86,39 +88,15 @@
       </button>
     </div>
 
-    <div class="p-2">
-      <input
-        type="text"
-        class="w-full mb-2 p-2 border border-gray-300 rounded {isOpen
-          ? 'w-0 opacity-0'
-          : 'w-full opacity-100'}"
-        bind:value={searchQuery}
-        placeholder="Search"
-        on:input={() => {}}
-      />
-
-      <button
-        class="w-full p-2 bg-blue-500 text-white rounded {isOpen
-          ? 'w-0 opacity-0'
-          : 'w-full opacity-100'}"
-        on:click={search}
-      >
-        Search
-      </button>
-
-      <main>
-        <button
-          class="w-full mt-2 p-2 bg-blue-500 text-white rounded{isOpen
-            ? 'w-0 opacity-0'
-            : 'w-full opacity-100'}"
-          on:click={toggleModal}
-        >
-          ADD
-        </button>
-        <Modal {isOpened} {isOpen} {cards} {handleUpdate} />
-      </main>
-    </div>
-
+    <Addbutton
+      {searchQuery}
+      {search}
+      {isOpen}
+      {toggleModal}
+      {cards}
+      {handleUpdate}
+      {isOpened}
+    />
     <ul class="p-2">
       {#each cards as card}
         <button class="btn" on:click={() => ClickedCard(card)}>
@@ -138,49 +116,7 @@
       {/each}
     </ul>
   </div>
-
-  <div class="carcard m-10">
-    {#if selectedCard}
-      <div>
-        <h2 class="  flex items-center justify-center text-2xl font-bold mb-4">
-          {selectedCard.title} Nested Data
-        </h2>
-        <div class="flex items-center justify-center">
-          <button
-            class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            on:click={expandContent}>Expand</button
-          >
-          <button
-            class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >ADD</button
-          >
-        </div>
-
-        <div class="m-5 grid grid-cols-4 gap-4">
-          <!-- <div class="grid grid-cols-4 gap-4"> -->
-
-          {#if isExpanded}
-            {#each nestedData as item}
-              <div
-                class="  rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
-              >
-                <h5
-                  class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
-                >
-                  {item.title}
-                </h5>
-                <p
-                  class="mb-4 text-base text-neutral-600 dark:text-neutral-200"
-                >
-                  {item.description}
-                </p>
-              </div>
-            {/each}
-          {/if}
-        </div>
-      </div>
-    {/if}
-  </div>
+  <SelectedCard {selectedCard} {nestedData} {expandContent} {isExpanded} />
 </div>
 
 <style>
@@ -208,9 +144,7 @@
     cursor: pointer;
     border-radius: 10px;
   }
-  .carcard {
-    width: 100%;
-  }
+
   .cards:hover {
     background-color: rgb(4, 68, 121);
   }

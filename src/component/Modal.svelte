@@ -10,7 +10,3 @@
 {#if isOpened}
   <InputCard data={cards} {handleUpdate} {isOpen} />
 {/if}
-
-<style>
-  /* Add styles for the modal */
-</style>
