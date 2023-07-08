@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import { data2 } from "./data";
+  import { data2 } from "../js/data";
+  import Sidenav from "../component/Sidenav.svelte";
 
   export let selectedCard = null;
 

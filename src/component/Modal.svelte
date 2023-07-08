@@ -13,11 +13,4 @@
 
 <style>
   /* Add styles for the modal */
-  .modal {
-    /* Modal styles */
-  }
-
-  .modal-content {
-    /* Modal content styles */
-  }
 </style>

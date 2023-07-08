@@ -90,8 +90,6 @@
   let companyName = "";
   let description = "";
 
-  const dispatch = createEventDispatcher();
-
   function addCard() {
     const newCard = {
       id: Date.now(),
@@ -133,12 +131,6 @@
     width: fit-content;
     cursor: pointer;
     border-radius: 10px;
-  }
-
-  .cards h5 {
-    border-bottom: white 2px solid;
-    margin: 5px;
-    padding: 5px;
   }
 
   .cards:hover {
