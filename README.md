@@ -1,3 +1,6 @@
+# CARS-CARD
+This is a simple CARDS website that shows Cars details.
+
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
 ---
@@ -105,3 +108,5 @@ Then, from within your project folder:
 npm run build
 surge public my-project.surge.sh
 ```
+
+
