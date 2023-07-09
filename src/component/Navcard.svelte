@@ -26,7 +26,10 @@
   .container {
     padding: 10px;
   }
+  .card {
+    box-shadow: 0px 0px 1px 2px rgba(211, 209, 209, 0.9);
+  }
   .card:hover {
-    background-color: gray;
+    box-shadow: 0px 0px 4px 5px rgba(211, 209, 209, 0.9);
   }
 </style>

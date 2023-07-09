@@ -1,6 +1,5 @@
 <script>
   export let toggleNavigation;
-  export let isOpen;
 </script>
 
 <!-- Sidenav content -->

@@ -31,11 +31,11 @@
   function ClickedCard(e) {
     selectedCard = e;
     nestedData = cardss.filter((card) => card.companyId === e.id);
-    isExpanded = false;
+    isExpanded = true;
   }
 
   function expandContent() {
-    isExpanded = true;
+    isExpanded = !isExpanded;
   }
 
   onMount(() => {
@@ -44,17 +44,9 @@
 
   function handleUpdate() {
     cards = cards;
+    ClickedCard(selectedCard);
   }
 
-  function search() {
-    selectedCard = cards.find(
-      (card) => card.title.toLowerCase() === searchQuery.toLowerCase()
-    );
-
-    console.log(selectedCard);
-
-    nestedData = cardss.filter((card) => card.companyId === selectedCard.id);
-  }
   function searchedcard(selected, nested) {
     selectedCard = selected;
     nestedData = nested;
@@ -75,7 +67,6 @@
       <Addbutton
         {searchQuery}
         {selectedCard}
-        {search}
         {cardss}
         {isOpen}
         {toggleModal}
@@ -87,7 +78,19 @@
       <Navcard {cards} {ClickedCard} {isOpen} />
     </div>
     <div class="...">
-      <SelectedCard {selectedCard} {nestedData} {expandContent} {isExpanded} />
+      <SelectedCard
+        {handleUpdate}
+        {data2}
+        {selectedCard}
+        {nestedData}
+        {expandContent}
+        {isExpanded}
+        {isOpened}
+        {isOpen}
+        {cards}
+        {ClickedCard}
+      />
+
       <!-- SelectedCard content -->
     </div>
   </div>
