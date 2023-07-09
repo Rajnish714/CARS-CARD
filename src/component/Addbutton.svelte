@@ -1,12 +1,26 @@
 <script>
   import Modal from "./Modal.svelte";
   export let searchQuery;
-  export let search;
+
+  // export let search;
   export let isOpen;
   export let toggleModal;
   export let cards;
+  export let cardss;
   export let handleUpdate;
   export let isOpened;
+  export let selectedCard;
+  export let nestedData;
+  export let searchedcard;
+
+  function search() {
+    selectedCard = cards.find(
+      (card) => card.title.toLowerCase() === searchQuery.toLowerCase()
+    );
+
+    nestedData = cardss.filter((card) => card.companyId === selectedCard.id);
+    searchedcard(selectedCard, nestedData);
+  }
 </script>
 
 <div class="p-2">
