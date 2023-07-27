@@ -8,5 +8,5 @@
 </script>
 
 {#if isOpened}
-  <InputCard data={cards} {handleUpdate} {isOpen} />
+  <InputCard holder="Company Name" data={cards} {handleUpdate} {isOpen} />
 {/if}

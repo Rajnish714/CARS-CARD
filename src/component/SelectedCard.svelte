@@ -45,7 +45,7 @@
         </button>
         {#if form}
           <div class="form flex">
-            <InputCard {selectedCard} {data2} {handleUpdate} {update} />
+            <InputCard holder="Car Model" {selectedCard} {data2} {handleUpdate} {update} />
           </div>
         {/if}
       </div>

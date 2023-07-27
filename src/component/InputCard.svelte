@@ -6,11 +6,13 @@
   export let handleUpdate;
   export let selectedCard;
   export let update;
+  export let holder;
   let companyName = "";
   let description = "";
-
+let place=""
   function addCard() {
     if (selectedCard) {
+      place="Car Model"
       const newCard = {
         id: Date.now(),
         companyId: selectedCard.id,
@@ -22,6 +24,7 @@
       console.log(data2);
       update();
     } else {
+      place="Company Name"
       const newCard = {
         id: Date.now(),
         title: companyName,
@@ -43,7 +46,7 @@
     class="input"
     type="text"
     required
-    placeholder="Company Name"
+    placeholder={holder}
     bind:value={companyName}
   />
   <textarea placeholder="Description" required bind:value={description} />
